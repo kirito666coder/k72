@@ -1,9 +1,11 @@
+import { BrowserRouter } from "react-router-dom"
+import Allroutes from "./routes/Allroutes"
 
 const App = () => {
   return (
-    <div className="">
-      App
-    </div>
+      <BrowserRouter>
+      <Allroutes/>
+      </BrowserRouter>
   )
 }
 
