@@ -5,7 +5,11 @@ import Work from "../pages/Work"
 import Project from "../pages/Project"
 
 const Allroutes = () => {
+
   return (
+    <>
+     
+     
         <Routes>
             <Route path="/" element={<Home/>}/>
 
@@ -15,6 +19,7 @@ const Allroutes = () => {
 
             <Route path="/projects" element={<Project/>}/>
         </Routes>
+    </>
   )
 }
 
