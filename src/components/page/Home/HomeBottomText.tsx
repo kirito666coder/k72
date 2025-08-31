@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
-import { ContextForNav } from "../../../context/NavContext"
+import { ContextForNav } from "../../../context/ContextForNav"
 
 const HomeBottomText = () => {
 

@@ -1,14 +1,14 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
-import { useContext, useRef } from "react"
-import { ContextForNav } from "../../context/NavContext"
+import { useContext, useRef, type ReactNode } from "react"
+import { ContextForNav } from "../../context/ContextForNav"
 
-const Stairs = ({children}) => {
+const Stairs = ({children}:{children:ReactNode}) => {
 
    const {NavigateContext}= useContext(ContextForNav)
 
-    const stairParentRef = useRef(null)
-    const pageRef = useRef(null)
+    const stairParentRef = useRef<HTMLDivElement>(null)
+    const pageRef = useRef<HTMLDivElement>(null)
 
     useGSAP(()=>{
       const tl = gsap.timeline()

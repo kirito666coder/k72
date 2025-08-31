@@ -1,10 +1,10 @@
-import { createContext, useState } from "react"
+import { useState, type ReactNode } from "react"
+import { ContextForNav } from "./ContextForNav"
 
-export const ContextForNav = createContext(null)
 
-const NavContext = ({children}) => {
+const NavContext = ({children}:{children:ReactNode}) => {
 
-    const [NavigateContext, setNavigateContext] = useState()
+    const [NavigateContext, setNavigateContext] = useState<string>()
 
   return (
     <ContextForNav.Provider value={{NavigateContext,setNavigateContext}}>
