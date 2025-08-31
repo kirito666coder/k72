@@ -9,3 +9,57 @@
     font-family: font2;
     src: url(../public/fonts/Lausanne-500.woff2);
 }
+
+@keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-59.5%);
+    }
+  }
+  
+  .scroll-left {
+    animation: scroll-left 10s linear infinite;
+  }
+
+@keyframes scroll-left2 {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-65.5%);
+    }
+  }
+  
+  .scroll-left2 {
+    animation: scroll-left2 10s linear infinite;
+  }
+
+@keyframes scroll-left3 {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .scroll-left3 {
+    animation: scroll-left3 10s linear infinite;
+  }
+
+  @keyframes scroll-left4 {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-59%);
+    }
+  }
+  
+  .scroll-left4 {
+    animation: scroll-left4 10s linear infinite;
+  }
+  
+
