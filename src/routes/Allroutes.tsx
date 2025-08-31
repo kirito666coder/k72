@@ -3,13 +3,13 @@ import Home from "../pages/Home"
 import Agency from "../pages/Agency"
 import Work from "../pages/Work"
 import Project from "../pages/Project"
+import NavBar from "../components/Navigation/NavBar"
 
 const Allroutes = () => {
 
   return (
     <>
-     
-     
+     <NavBar/>
         <Routes>
             <Route path="/" element={<Home/>}/>
 
