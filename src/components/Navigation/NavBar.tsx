@@ -1,11 +1,14 @@
-import { useContext } from "react"
+import { useContext,  useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import { ContextForNav } from "../../context/ContextForNav"
+import FullScreenNav from "./FullScreenNav"
 
 const NavBar = () => {
     const location = useLocation().pathname
     const navigate = useNavigate()
-    console.log(location)
+    
+    const [showFullScreenNav, setshowFullScreenNav] = useState<boolean>(false)
+
 
     const {setNavigateContext} = useContext(ContextForNav)
 
@@ -15,10 +18,11 @@ const NavBar = () => {
         navigate(value)
       }, 1000);
     }
+    
   
 
   return (
-    <div className=" flex fixed top-0 w-full items-start justify-between z-20">
+    <div className=" flex fixed top-0 w-full items-start justify-between z-40">
         <div className="p-3 ">
         <div onClick={()=>handleClick({value:'/'})} className=" w-32 md:w-40 cursor-pointer">
       <svg xmlns="http://www.w3.org/2000/svg"  style={{ fill: location === '/' ? 'white' : 'black' }} className={`h-full  w-full  `} viewBox="0 0 103 44">
@@ -26,7 +30,9 @@ const NavBar = () => {
                     </svg>
         </div>
         </div>
-        <div className=" bg-black h-13 w-80 relative group cursor-pointer">
+        <div
+        onClick={()=>setshowFullScreenNav(true)}
+        className=" bg-black h-13 w-80 relative group cursor-pointer">
             <div className="bg-lime-300 h-0 w-full group-hover:h-full transition-all duration-300">
             </div>
            <div className=" absolute left-55 top-0 h-full w-18  ">
@@ -35,6 +41,7 @@ const NavBar = () => {
             <div className="bg-gray-400 group-hover:bg-gray-600 min-h-0.5 max-w-8 ml-7 mt-1"></div>
            </div>
         </div>
+          <FullScreenNav setshowFullScreenNav={setshowFullScreenNav} showFullScreenNav={showFullScreenNav} />
     </div>
   )
 }

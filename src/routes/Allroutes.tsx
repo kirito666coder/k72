@@ -4,14 +4,12 @@ import Agency from "../pages/Agency"
 import Work from "../pages/Work"
 import Project from "../pages/Project"
 import NavBar from "../components/Navigation/NavBar"
-import FullScreenNav from "../components/Navigation/FullScreenNav"
 
 const Allroutes = () => {
 
   return (
     <>
      <NavBar/>
-     <FullScreenNav/>
         <Routes>
             <Route path="/" element={<Home/>}/>
 
