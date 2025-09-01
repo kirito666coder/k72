@@ -29,7 +29,7 @@ const NavBar = () => {
                     </svg>
         </div>
         </div>
-        <div
+        <div onClick={()=>setshowfullscrean('open')}
         className=" bg-black h-13 w-80 relative group cursor-pointer">
             <div className="bg-lime-300 h-0 w-full group-hover:h-full transition-all duration-300">
             </div>
