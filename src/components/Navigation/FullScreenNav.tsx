@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState, type Dispatch, type SetStateAction } from "react";
+import { useContext,useRef,useState, } from "react";
 import { ContextForNav } from "../../context/ContextForNav";
 import { useNavigate } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
@@ -53,27 +53,12 @@ const HoverBox = ({ title, children }: HoverBoxProps) => {
     );
 };
 
-type FullScreenNavProps = {
-    showFullScreenNav: boolean
-    setshowFullScreenNav: Dispatch<SetStateAction<boolean>>;
-  };
 
-const FullScreenNav: React.FC<FullScreenNavProps> = ({showFullScreenNav,setshowFullScreenNav}) => {
+const FullScreenNav= ({setshowfullscrean,showfullscrean}) => {
 
     const navigate = useNavigate()
+
     const {setNavigateContext} = useContext(ContextForNav)
-
-    const [delayedShow, setDelayedShow] = useState(false);
-
-    useEffect(() => {
-      let timer: ReturnType<typeof setTimeout>;
-      if (showFullScreenNav) {
-        timer = setTimeout(() => setDelayedShow(true), 900);
-      } else {
-        setDelayedShow(false);
-      }
-      return () => clearTimeout(timer);
-    }, [showFullScreenNav]);
 
     const handleClick = ({value}:{value:string})=>{
        setNavigateContext(value)
@@ -82,50 +67,66 @@ const FullScreenNav: React.FC<FullScreenNavProps> = ({showFullScreenNav,setshowF
       }, 1000);
     }
 
-    const stairParentRef = useRef<HTMLDivElement>(null)
+   
+
+    const fullnavStairRef = useRef(null)
+    const fullnavRef = useRef(null)
 
     useGSAP(() => {
         const tl = gsap.timeline();
-    
-        if (showFullScreenNav) {
-          tl.set(stairParentRef.current, { display: "block" });
-    
+      
+        if (showfullscrean === "open") {
+         
+          gsap.set(fullnavStairRef.current, { display: "block" });
+          gsap.set(fullnavRef.current, { autoAlpha: 0 }); 
+      
+        
           tl.fromTo(
             ".stairs",
             { height: "0%" },
             {
               height: "100%",
               stagger: { amount: -0.3 },
+              duration: 0.6,
             }
           );
-        } else {
+      
+       
+          tl.to(fullnavRef.current, { autoAlpha: 1, duration: 0.2 }, "-=0.2");
+        }
+      
+        if (showfullscrean === "close") {
+        
+          tl.to(fullnavRef.current, { autoAlpha: 0, duration: 0.2 });
+      
+      
           tl.to(".stairs", {
             height: "0%",
-            stagger: { amount: 0.3 ,from:'end'}, 
+            stagger: { amount: 0.3, from: "end" },
+            duration: 0.6,
             onComplete: () => {
-              gsap.set(stairParentRef.current, { display: "none" });
+              gsap.set(fullnavStairRef.current, { display: "none" });
             },
           });
+      
+          
+          tl.call(() => setshowfullscrean(null));
         }
-    
-        return () => {
-          tl.kill(); 
-        };
-      }, [showFullScreenNav]);
+      }, [showfullscrean]);
+      
 
     return (<>
-      <div ref={stairParentRef} className="h-screen w-screen fixed z-10 top-0">
+    
+     <div ref={fullnavStairRef} className="h-screen w-screen fixed z-20 top-0">
     <div className="h-full w-full flex">
-     <div className=" stairs h-full w-full  md:w-1/5 bg-black"></div>
-     <div className=" stairs h-full w-full  md:w-1/5 bg-black"></div>
-     <div className=" hidden md:block stairs h-full w-1/5 bg-black"></div>
-     <div className=" hidden md:block stairs h-full w-1/5 bg-black"></div>
-     <div className=" hidden md:block stairs h-full w-1/5 bg-black"></div>
+     <div className=" stairs h-full w-1/5 bg-black"></div>
+     <div className=" stairs h-full w-1/5 bg-black"></div>
+     <div className=" stairs h-full w-1/5 bg-black"></div>
+     <div className=" stairs h-full w-1/5 bg-black"></div>
+     <div className=" stairs h-full w-1/5 bg-black"></div>
     </div>
     </div>
-    {delayedShow &&
-    <>
-      <div className=" flex fixed top-0 w-full items-start justify-between z-20">
+      <div ref={fullnavRef} className=" flex fixed top-0 w-full items-start justify-between z-25">
         <div className="p-3 ">
         <div onClick={()=>handleClick({value:'/'})} className=" w-32 md:w-40 cursor-pointer">
       <svg xmlns="http://www.w3.org/2000/svg" className={`h-full  w-full fill-white  `} viewBox="0 0 103 44">
@@ -133,12 +134,12 @@ const FullScreenNav: React.FC<FullScreenNavProps> = ({showFullScreenNav,setshowF
                     </svg>
         </div>
         </div>
-           <div onClick={()=>setshowFullScreenNav(false)} className=" h-full flex mr-16 group cursor-pointer">
+           <div onClick={()=>setshowfullscrean('close')} className=" h-full flex mr-16 group cursor-pointer">
       <div className=" inset-0 w-1 h-40  bg-white group-hover:bg-lime-300 rotate-45"></div>
       <div className=" inset-0 w-1 h-40  bg-white group-hover:bg-lime-300 -rotate-45"></div>
     </div>
     </div>
-        <div className="z-10 h-screen w-full absolute bg-black text-white flex flex-col justify-center">
+        <div ref={fullnavRef} className="z-20 h-screen w-full absolute bg-black text-white flex flex-col justify-center">
             {/* WORK */}
             <HoverBox title="WORK">
                 <div className="flex items-center scroll-left">
@@ -212,8 +213,6 @@ const FullScreenNav: React.FC<FullScreenNavProps> = ({showFullScreenNav,setshowF
                 </div>
             </HoverBox>
         </div>
-    </>
-}
     </>
     );
 };

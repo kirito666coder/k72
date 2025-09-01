@@ -1,4 +1,4 @@
-import { useContext,  useState } from "react"
+import { useContext, useState, } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import { ContextForNav } from "../../context/ContextForNav"
 import FullScreenNav from "./FullScreenNav"
@@ -7,7 +7,6 @@ const NavBar = () => {
     const location = useLocation().pathname
     const navigate = useNavigate()
     
-    const [showFullScreenNav, setshowFullScreenNav] = useState<boolean>(false)
 
 
     const {setNavigateContext} = useContext(ContextForNav)
@@ -19,7 +18,7 @@ const NavBar = () => {
       }, 1000);
     }
     
-  
+    const [showfullscrean, setshowfullscrean] = useState<string|null>(null)
 
   return (
     <div className=" flex fixed top-0 w-full items-start justify-between z-40">
@@ -31,17 +30,18 @@ const NavBar = () => {
         </div>
         </div>
         <div
-        onClick={()=>setshowFullScreenNav(true)}
         className=" bg-black h-13 w-80 relative group cursor-pointer">
             <div className="bg-lime-300 h-0 w-full group-hover:h-full transition-all duration-300">
             </div>
-           <div className=" absolute left-55 top-0 h-full w-18  ">
+           <div onClick={()=>setshowfullscrean('open')} className=" absolute left-55 top-0 h-full w-18  ">
 
             <div className="bg-gray-400 group-hover:bg-gray-600 min-h-0.5 max-w-15 mt-6"></div>
             <div className="bg-gray-400 group-hover:bg-gray-600 min-h-0.5 max-w-8 ml-7 mt-1"></div>
            </div>
         </div>
-          <FullScreenNav setshowFullScreenNav={setshowFullScreenNav} showFullScreenNav={showFullScreenNav} />
+        {showfullscrean &&
+          <FullScreenNav setshowfullscrean={setshowfullscrean} showfullscrean={showfullscrean} />
+        }
     </div>
   )
 }
