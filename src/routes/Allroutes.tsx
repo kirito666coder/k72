@@ -2,8 +2,8 @@ import { Route, Routes } from "react-router-dom"
 import Home from "../pages/Home"
 import Agency from "../pages/Agency"
 import Work from "../pages/Work"
-import Project from "../pages/Project"
 import NavBar from "../components/Navigation/NavBar"
+import Contact from "../pages/Contact"
 
 const Allroutes = () => {
 
@@ -17,7 +17,7 @@ const Allroutes = () => {
 
             <Route path="/agency" element={<Agency/>}/>
 
-            <Route path="/projects" element={<Project/>}/>
+            <Route path="/contact" element={<Contact/>}/>
         </Routes>
     </>
   )

@@ -15,7 +15,7 @@ const NavBar = () => {
        setNavigateContext(value)
       setTimeout(() => {
         navigate(value)
-      }, 1000);
+      }, 1290);
     }
     
     const [showfullscrean, setshowfullscrean] = useState<string|null>(null)

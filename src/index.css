@@ -10,6 +10,11 @@
     src: url(../public/fonts/Lausanne-500.woff2);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 @keyframes scroll-left {
     0% {
       transform: translateX(0%);

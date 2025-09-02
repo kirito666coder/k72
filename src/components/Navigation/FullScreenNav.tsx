@@ -89,7 +89,7 @@ const FullScreenNav= ({setshowfullscrean,showfullscrean}:FullScreenNavProps) => 
        setNavigateContext(value)
       setTimeout(() => {
         navigate(value)
-      }, 1000);
+      }, 1290);
     }
 
     const [isOpen, setIsOpen] = useState(false);
@@ -141,8 +141,8 @@ const FullScreenNav= ({setshowfullscrean,showfullscrean}:FullScreenNavProps) => 
             }, 400);
         }
       }, [showfullscrean]);
+    
       
-
     return (<>
     
      <div ref={fullnavStairRef} className="h-screen w-screen fixed z-20 top-0">
@@ -157,7 +157,7 @@ const FullScreenNav= ({setshowfullscrean,showfullscrean}:FullScreenNavProps) => 
       <div ref={fullnavRef} className=" flex fixed top-0 w-full items-start justify-between z-25">
         <div className="p-3 ">
         <div onClick={()=>{handleClick({value:'/'})
-    setshowfullscrean('close')}} className=" w-32 md:w-40 cursor-pointer">
+    setshowfullscrean(null)}} className=" w-32 md:w-40 cursor-pointer">
       <svg xmlns="http://www.w3.org/2000/svg" className={`h-full  w-full fill-white  `} viewBox="0 0 103 44">
                       <path fillRule="inherit" d="M35.1441047,8.4486911 L58.6905011,8.4486911 L58.6905011,-1.3094819e-14 L35.1441047,-1.3094819e-14 L35.1441047,8.4486911 Z M20.0019577,0.000230366492 L8.83414254,25.3433089 L18.4876971,25.3433089 L29.5733875,0.000230366492 L20.0019577,0.000230366492 Z M72.5255345,0.000691099476 L72.5255345,8.44846073 L94.3991559,8.44846073 L94.3991559,16.8932356 L72.5275991,16.8932356 L72.5275991,19.5237906 L72.5255345,19.5237906 L72.5255345,43.9274346 L102.80937,43.9274346 L102.80937,35.4798953 L80.9357483,35.4798953 L80.9357483,25.3437696 L94.3996147,25.3428482 L94.3996147,16.8953089 L102.80937,16.8953089 L102.80937,0.000691099476 L72.5255345,0.000691099476 Z M-1.30398043e-14,43.9278953 L8.78642762,43.9278953 L8.78642762,0.0057591623 L-1.30398043e-14,0.0057591623 L-1.30398043e-14,43.9278953 Z M58.6849955,8.4486911 L43.1186904,43.9274346 L52.3166592,43.9274346 L67.9877996,8.4486911 L58.6849955,8.4486911 Z M18.4688864,25.3437696 L26.7045278,43.9278953 L36.2761871,43.9278953 L28.1676325,25.3375497 L18.4688864,25.3437696 Z"></path>
                     </svg>
@@ -175,7 +175,8 @@ const FullScreenNav= ({setshowfullscrean,showfullscrean}:FullScreenNavProps) => 
         <div ref={fullnavRef} className="z-20 h-screen w-full absolute bg-black text-white flex flex-col justify-center">
             {/* WORK */}
             <HoverBox title="WORK">
-                <div className="flex items-center scroll-left">
+                <div onClick={()=>{handleClick({value:'/work'})
+            setshowfullscrean(null)}} className="cursor-pointer flex items-center scroll-left">
                     <span className="mx-4 whitespace-nowrap">SEE EVERYTHING</span>
                     <img className=" h-18 w-50 md:h-30 md:w-100  rounded-full mx-4" src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" />
                     <span className="mx-4 whitespace-nowrap">SEE EVERYTHING</span>
@@ -191,7 +192,8 @@ const FullScreenNav= ({setshowfullscrean,showfullscrean}:FullScreenNavProps) => 
 
             {/* AGENCY */}
             <HoverBox title="AGENCY">
-                <div className="flex items-center scroll-left2">
+                <div onClick={()=>{handleClick({value:'/agency'})
+            setshowfullscrean(null)}} className="cursor-pointer flex items-center scroll-left2">
                     <span className="mx-4 whitespace-nowrap">KNOW US</span>
                     <img className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/teamMembers/Arnaud_640X290-640x290.jpg" />
                     <span className="mx-4 whitespace-nowrap">KNOW US</span>
@@ -207,7 +209,8 @@ const FullScreenNav= ({setshowfullscrean,showfullscrean}:FullScreenNavProps) => 
 
             {/* CONTACT */}
             <HoverBox title="CONTACT">
-                <div className="flex scroll-left3 items-center">
+                <div onClick={()=>{handleClick({value:'/contact'})
+            setshowfullscrean(null)}} className="cursor-pointer flex scroll-left3 items-center">
                     <span className="mx-4 whitespace-nowrap">SEND US A FAX</span>
                     <svg className="w-20 h-20 mx-2" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.445 3h-8.89c-.345 0-.666.178-.849.47L3.25 9h17.5l-3.456-5.53a1.003 1.003 0 0 0-.849-.47zM11.26 21.186a1 1 0 0 0 1.48 0L22 11H2l9.26 10.186z"></path>
@@ -232,7 +235,7 @@ const FullScreenNav= ({setshowfullscrean,showfullscrean}:FullScreenNavProps) => 
 
             {/* BLOG */}
             <HoverBox title="BLOG">
-                <div className="flex items-center  scroll-left4">
+                <div className="cursor-pointer flex items-center  scroll-left4">
                     <span className="mx-4 whitespace-nowrap">READ ARTICLES</span>
                     <img className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/blog/blogImg/ier.com-16107673482102220.gif" />
                     <span className="mx-4 whitespace-nowrap">READ ARTICLES</span>

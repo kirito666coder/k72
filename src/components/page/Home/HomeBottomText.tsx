@@ -11,7 +11,7 @@ const HomeBottomText = () => {
      setNavigateContext(value)
     setTimeout(() => {
       navigate(value)
-    }, 1000);
+    }, 1290);
   }
 
   return (

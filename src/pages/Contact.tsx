@@ -1,5 +1,5 @@
 
-const Project = () => {
+const Contact = () => {
   return (
     <div>
       
@@ -7,4 +7,4 @@ const Project = () => {
   )
 }
 
-export default Project
+export default Contact
