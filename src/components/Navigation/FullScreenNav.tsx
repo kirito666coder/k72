@@ -87,6 +87,7 @@ const FullScreenNav= ({setshowfullscrean,showfullscrean}:FullScreenNavProps) => 
 
     const handleClick = ({value}:{value:string})=>{
        setNavigateContext(value)
+       setshowfullscrean(null)
       setTimeout(() => {
         navigate(value)
       }, 1290);
@@ -175,8 +176,7 @@ const FullScreenNav= ({setshowfullscrean,showfullscrean}:FullScreenNavProps) => 
         <div ref={fullnavRef} className="z-20 h-screen w-full absolute bg-black text-white flex flex-col justify-center">
             {/* WORK */}
             <HoverBox title="WORK">
-                <div onClick={()=>{handleClick({value:'/work'})
-            setshowfullscrean(null)}} className="cursor-pointer flex items-center scroll-left">
+                <div onClick={()=>{handleClick({value:'/work'})}} className="cursor-pointer flex items-center scroll-left">
                     <span className="mx-4 whitespace-nowrap">SEE EVERYTHING</span>
                     <img className=" h-18 w-50 md:h-30 md:w-100  rounded-full mx-4" src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" />
                     <span className="mx-4 whitespace-nowrap">SEE EVERYTHING</span>
@@ -192,8 +192,7 @@ const FullScreenNav= ({setshowfullscrean,showfullscrean}:FullScreenNavProps) => 
 
             {/* AGENCY */}
             <HoverBox title="AGENCY">
-                <div onClick={()=>{handleClick({value:'/agency'})
-            setshowfullscrean(null)}} className="cursor-pointer flex items-center scroll-left2">
+                <div onClick={()=>{handleClick({value:'/agency'})}} className="cursor-pointer flex items-center scroll-left2">
                     <span className="mx-4 whitespace-nowrap">KNOW US</span>
                     <img className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/teamMembers/Arnaud_640X290-640x290.jpg" />
                     <span className="mx-4 whitespace-nowrap">KNOW US</span>
@@ -209,8 +208,7 @@ const FullScreenNav= ({setshowfullscrean,showfullscrean}:FullScreenNavProps) => 
 
             {/* CONTACT */}
             <HoverBox title="CONTACT">
-                <div onClick={()=>{handleClick({value:'/contact'})
-            setshowfullscrean(null)}} className="cursor-pointer flex scroll-left3 items-center">
+                <div onClick={()=>{handleClick({value:'/contact'})}} className="cursor-pointer flex scroll-left3 items-center">
                     <span className="mx-4 whitespace-nowrap">SEND US A FAX</span>
                     <svg className="w-20 h-20 mx-2" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.445 3h-8.89c-.345 0-.666.178-.849.47L3.25 9h17.5l-3.456-5.53a1.003 1.003 0 0 0-.849-.47zM11.26 21.186a1 1 0 0 0 1.48 0L22 11H2l9.26 10.186z"></path>

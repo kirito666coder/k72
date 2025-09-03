@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all"
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const Agency = () => {
 
@@ -28,11 +28,14 @@ const Agency = () => {
 
   useGSAP(function(){
     if (!imageDivRef.current) return;
+
+    const endValue = window.innerWidth < 768 ? "end -1%" : "end -140%";
+
     gsap.to(imageDivRef.current,{
     scrollTrigger:{
       trigger:imageDivRef.current,
       start:'top 28%',
-      end:'end -140%',
+      end:endValue,
       pin:true,
       onUpdate:(elem)=> {
         let imageIndex;
@@ -47,14 +50,33 @@ const Agency = () => {
     })
   })
 
- 
+  const [bg, setBg] = useState("white");
+  const [color, setcolor] = useState("black");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollLimit = window.innerWidth < 768 ? 1500 : 3000; 
+  
+      if (window.scrollY > scrollLimit) {
+        setBg("black");
+        setcolor("white");
+      } else {
+        setBg("white");
+        setcolor("black");
+      }
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
 
   return (
-    <div className="font-[font2]">
+    <div className="font-[font2] transition-all duration-700" style={{ backgroundColor: bg ,color:color }}>
 
       <div className="section-1">
 
-        <img ref={imageDivRef} src={`${imagesArray[0]}`} className="bg-blue-400 w-[19vw] h-[25vw] md:w-[15vw] md:h-[20vw] absolute top-85 left-[33vw] rounded-2xl"/>
+        <img ref={imageDivRef} src={`${imagesArray[0]}`} className=" w-[19vw] h-[25vw] md:w-[15vw] md:h-[20vw] absolute top-85 left-[33vw] rounded-2xl"/>
 
 
         <div className="mt-90 md:mt-166 relative">
@@ -92,6 +114,23 @@ const Agency = () => {
           </div>
         </div>
       </div>
+
+      <div className="h-[2000px] w-full ">
+
+    <div className="bg-blue-900 h-[500px] w-full sticky top-50 md:top-0 mx-auto mt-40 flex justify-center items-center">
+       <div className="absolute w-full top-20 flex gap-40 text-nowrap">
+        <span className="uppercase text-lime-300 text-6xl">claire robert</span>
+        <span className="uppercase text-lime-300 text-6xl">claire robert</span>
+        <span className="uppercase text-lime-300 text-6xl">claire robert</span>
+        <span className="uppercase text-lime-300 text-6xl">claire robert</span>
+       </div>
+      <div className="bg-red-900 h-full w-80 rounded-4xl z-10">
+
+      </div>
+
+  </div>
+</div>
+
 
     </div>
   )
