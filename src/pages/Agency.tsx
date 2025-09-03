@@ -2,12 +2,13 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all"
 import { useEffect, useRef, useState } from "react"
+import AgencyCard from "../components/page/Agency/AgencyCard"
 
 const Agency = () => {
 
   const imageDivRef = useRef<HTMLImageElement>(null)
 
-  const imagesArray =[
+  const imagesArray = [
     'https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg',
     'https://k72.ca/uploads/teamMembers/Olivier_480x640-480x640.jpg',
     'https://k72.ca/uploads/teamMembers/Lawrence_480x640-480x640.jpg',
@@ -26,27 +27,27 @@ const Agency = () => {
 
   gsap.registerPlugin(ScrollTrigger)
 
-  useGSAP(function(){
+  useGSAP(function () {
     if (!imageDivRef.current) return;
 
     const endValue = window.innerWidth < 768 ? "end -1%" : "end -140%";
 
-    gsap.to(imageDivRef.current,{
-    scrollTrigger:{
-      trigger:imageDivRef.current,
-      start:'top 28%',
-      end:endValue,
-      pin:true,
-      onUpdate:(elem)=> {
-        let imageIndex;
-        if(elem.progress<1){
-           imageIndex = Math.floor(elem.progress * imagesArray.length)
-        }else{
-            imageIndex = imagesArray.length-1
+    gsap.to(imageDivRef.current, {
+      scrollTrigger: {
+        trigger: imageDivRef.current,
+        start: 'top 28%',
+        end: endValue,
+        pin: true,
+        onUpdate: (elem) => {
+          let imageIndex;
+          if (elem.progress < 1) {
+            imageIndex = Math.floor(elem.progress * imagesArray.length)
+          } else {
+            imageIndex = imagesArray.length - 1
+          }
+          imageDivRef.current!.src = imagesArray[imageIndex]
         }
-        imageDivRef.current!.src = imagesArray[imageIndex]
       }
-    }
     })
   })
 
@@ -55,8 +56,8 @@ const Agency = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollLimit = window.innerWidth < 768 ? 1500 : 3000; 
-  
+      const scrollLimit = window.innerWidth < 768 ? 1500 : 3000;
+
       if (window.scrollY > scrollLimit) {
         setBg("black");
         setcolor("white");
@@ -65,18 +66,18 @@ const Agency = () => {
         setcolor("black");
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
+
 
   return (
-    <div className="font-[font2] transition-all duration-700" style={{ backgroundColor: bg ,color:color }}>
+    <div className="font-[font2] transition-all duration-700" style={{ backgroundColor: bg, color: color }}>
 
       <div className="section-1">
 
-        <img ref={imageDivRef} src={`${imagesArray[0]}`} className=" w-[19vw] h-[25vw] md:w-[15vw] md:h-[20vw] absolute top-85 left-[33vw] rounded-2xl"/>
+        <img ref={imageDivRef} src={`${imagesArray[0]}`} className=" w-[19vw] h-[25vw] md:w-[15vw] md:h-[20vw] absolute top-85 left-[33vw] rounded-2xl" />
 
 
         <div className="mt-90 md:mt-166 relative">
@@ -115,22 +116,7 @@ const Agency = () => {
         </div>
       </div>
 
-      <div className="h-[2000px] w-full ">
-
-    <div className="bg-blue-900 h-[500px] w-full sticky top-50 md:top-0 mx-auto mt-40 flex justify-center items-center">
-       <div className="absolute w-full top-20 flex gap-40 text-nowrap">
-        <span className="uppercase text-lime-300 text-6xl">claire robert</span>
-        <span className="uppercase text-lime-300 text-6xl">claire robert</span>
-        <span className="uppercase text-lime-300 text-6xl">claire robert</span>
-        <span className="uppercase text-lime-300 text-6xl">claire robert</span>
-       </div>
-      <div className="bg-red-900 h-full w-80 rounded-4xl z-10">
-
-      </div>
-
-  </div>
-</div>
-
+     <AgencyCard/>
 
     </div>
   )

@@ -67,4 +67,33 @@ html {
     animation: scroll-left4 10s linear infinite;
   }
   
+  .scroll-to-left {
+    display: flex;
+    width: max-content;
+    animation: scroll-left 15s linear infinite;
+  }
+  
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
 
+  .scroll-to-right {
+    display: flex;
+    width: max-content;
+    animation: scroll-right 15s linear infinite;
+  }
+  
+  @keyframes scroll-right {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
