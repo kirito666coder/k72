@@ -1,3 +1,4 @@
+import FooterForAgency from "./FooterForAgency"
 
 function AgencyThumbnailCards() {
   return (
@@ -26,6 +27,8 @@ function AgencyThumbnailCards() {
        <div className="absolute top-0 left-0 h-full w-full group-hover:bg-black/20 z-10"></div>
       <img src="./images/Fruite_thumbnail_bbq.jpg" className="  transition-all duration-600 group-hover:scale-105 h-full w-full object-cover " alt="" />
     </div>
+
+   <FooterForAgency/>
   </>
   )
 }

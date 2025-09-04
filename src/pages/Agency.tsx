@@ -118,8 +118,8 @@ const Agency = () => {
       </div>
 
       <AgencyCard />
-      
-      <div className=" h-[5000px] w-full relative">
+
+      <div className=" h-[35=200px] md:h-[4500px] w-full relative">
       <AgencyThumbnailCards/>
         </div>
     </div>
