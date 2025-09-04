@@ -1,8 +1,9 @@
+import AllAgencyMambersCard from "./AllAgencyMambersCard"
 
 const AgencyCard = () => {
   
   return (
-    <div className="h-[2200px] w-full relative">
+    <div className="h-[2500px] md:h-[3000px] w-full relative">
 
     <div  className=" h-[500px] md:h-[1000px] w-full sticky top-50 md:top-0 mx-auto mt-40 flex justify-center items-center z-10">
 
@@ -76,7 +77,9 @@ const AgencyCard = () => {
           </div>
         </div>
       </div>
-
+     <div className="z-30 sticky top-0">
+      <AllAgencyMambersCard/>
+     </div>
 
   </div>
 
