@@ -3,6 +3,7 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all"
 import { useEffect, useRef, useState } from "react"
 import AgencyCard from "../components/page/Agency/AgencyCard"
+import AllAgencyMambersCard from "../components/page/Agency/AllAgencyMambersCard"
 
 const Agency = () => {
 
@@ -117,6 +118,11 @@ const Agency = () => {
       </div>
 
      <AgencyCard/>
+     <AllAgencyMambersCard/>
+
+     <div className="bg-black h-[1000px]">
+
+     </div>
 
     </div>
   )
