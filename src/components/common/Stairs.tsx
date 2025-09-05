@@ -12,7 +12,6 @@ const Stairs = ({children}:{children:ReactNode}) => {
 
     useGSAP(()=>{
       const tl = gsap.timeline()
-      console.log(NavigateContext)
       if(NavigateContext !== undefined){
 
         tl.to(stairParentRef.current, {

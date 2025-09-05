@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import {motion} from 'framer-motion'
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 type HoverBoxProps = {
     title: string;
@@ -178,13 +179,13 @@ const FullScreenNav= ({setshowfullscrean,showfullscrean}:FullScreenNavProps) => 
             <HoverBox title="WORK">
                 <div onClick={()=>{handleClick({value:'/work'})}} className="cursor-pointer flex items-center scroll-left">
                     <span className="mx-4 whitespace-nowrap">SEE EVERYTHING</span>
-                    <img className=" h-18 w-50 md:h-30 md:w-100  rounded-full mx-4" src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" />
+                    <LazyLoadImage className=" h-18 w-50 md:h-30 md:w-100  rounded-full mx-4" src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" />
                     <span className="mx-4 whitespace-nowrap">SEE EVERYTHING</span>
-                    <img className=" h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" />
+                    <LazyLoadImage className=" h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" />
                     <span className="mx-4 whitespace-nowrap">SEE EVERYTHING</span>
-                    <img className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" />
+                    <LazyLoadImage className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" />
                     <span className="mx-4 whitespace-nowrap">SEE EVERYTHING</span>
-                    <img className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" />
+                    <LazyLoadImage className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" />
 
 
                 </div>
@@ -194,13 +195,13 @@ const FullScreenNav= ({setshowfullscrean,showfullscrean}:FullScreenNavProps) => 
             <HoverBox title="AGENCY">
                 <div onClick={()=>{handleClick({value:'/agency'})}} className="cursor-pointer flex items-center scroll-left2">
                     <span className="mx-4 whitespace-nowrap">KNOW US</span>
-                    <img className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/teamMembers/Arnaud_640X290-640x290.jpg" />
+                    <LazyLoadImage className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/teamMembers/Arnaud_640X290-640x290.jpg" />
                     <span className="mx-4 whitespace-nowrap">KNOW US</span>
-                    <img className="h-18 w-50 md:h-30 md:w-100  rounded-full mx-4" src="https://k72.ca/uploads/teamMembers/MEGGIE_640X290_2-640x290.jpg" />
+                    <LazyLoadImage className="h-18 w-50 md:h-30 md:w-100  rounded-full mx-4" src="https://k72.ca/uploads/teamMembers/MEGGIE_640X290_2-640x290.jpg" />
                     <span className="mx-4 whitespace-nowrap">KNOW US</span>
-                    <img className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/teamMembers/Arnaud_640X290-640x290.jpg" />
+                    <LazyLoadImage className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/teamMembers/Arnaud_640X290-640x290.jpg" />
                     <span className="mx-4 whitespace-nowrap">KNOW US</span>
-                    <img className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/teamMembers/MEGGIE_640X290_2-640x290.jpg" />
+                    <LazyLoadImage className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/teamMembers/MEGGIE_640X290_2-640x290.jpg" />
 
 
                 </div>
@@ -235,13 +236,13 @@ const FullScreenNav= ({setshowfullscrean,showfullscrean}:FullScreenNavProps) => 
             <HoverBox title="BLOG">
                 <div className="cursor-pointer flex items-center  scroll-left4">
                     <span className="mx-4 whitespace-nowrap">READ ARTICLES</span>
-                    <img className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/blog/blogImg/ier.com-16107673482102220.gif" />
+                    <LazyLoadImage className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/blog/blogImg/ier.com-16107673482102220.gif" />
                     <span className="mx-4 whitespace-nowrap">READ ARTICLES</span>
-                    <img className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/blog/blogImg/50ff59cc0550df5b36543807a58db98c52e01a22274a317eafbfa5266941579b-640x290.png" />
+                    <LazyLoadImage className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/blog/blogImg/50ff59cc0550df5b36543807a58db98c52e01a22274a317eafbfa5266941579b-640x290.png" />
                     <span className="mx-4 whitespace-nowrap">READ ARTICLES</span>
-                    <img className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/blog/blogImg/ier.com-16107673482102220.gif" />
+                    <LazyLoadImage className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/blog/blogImg/ier.com-16107673482102220.gif" />
                     <span className="mx-4 whitespace-nowrap">READ ARTICLES</span>
-                    <img className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/blog/blogImg/50ff59cc0550df5b36543807a58db98c52e01a22274a317eafbfa5266941579b-640x290.png" />
+                    <LazyLoadImage className="h-18 w-50 md:h-30 md:w-100 rounded-full mx-4" src="https://k72.ca/uploads/blog/blogImg/50ff59cc0550df5b36543807a58db98c52e01a22274a317eafbfa5266941579b-640x290.png" />
 
 
                 </div>

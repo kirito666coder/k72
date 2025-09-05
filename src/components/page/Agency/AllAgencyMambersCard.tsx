@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const AllAgencyMambersCard = () => {
     
@@ -71,7 +72,7 @@ const AllAgencyMambersCard = () => {
   return (
     <div className="bg-black h-[668px] w-full relative z-30">
       <div className=" rounded-4xl overflow-hidden h-100 w-70 sticky top-90 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
-      <img src={`${currentImage}`} className={`h-full object-cover ${ishover?'w-full':'w-0'}  transition-all duration-300`} alt="" />
+      <LazyLoadImage src={`${currentImage}`} className={`h-full object-cover ${ishover?'w-full':'w-0'}  transition-all duration-300`} alt="" />
       </div>
 
       <ul className="h-full w-full absolute top-20 md:top-50  left-0">

@@ -28,7 +28,9 @@ const NavBar = () => {
       if(location === '/agency'){
       if (window.scrollY > scrollLimit ) {
         setcolor("white");
-      } 
+      }else {
+        setcolor("black");
+      }
       }else {
         setcolor("black");
       }

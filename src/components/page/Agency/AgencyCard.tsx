@@ -1,3 +1,4 @@
+import { LazyLoadImage } from "react-lazy-load-image-component"
 import AllAgencyMambersCard from "./AllAgencyMambersCard"
 
 const AgencyCard = () => {
@@ -8,7 +9,7 @@ const AgencyCard = () => {
     <div  className=" h-[500px] md:h-[1000px] w-full sticky top-50 md:top-0 mx-auto mt-40 flex justify-center items-center z-10">
 
       <div className="h-full w-80 md:w-[600px] rounded-4xl z-10 overflow-hidden">
-        <img src="./images/Claire.jpg" className="h-full w-full object-cover" alt="" />
+        <LazyLoadImage src="./images/Claire.jpg" className="h-full w-full object-cover" alt="" />
       </div>
 
     </div>
@@ -44,7 +45,7 @@ const AgencyCard = () => {
     <div className=" h-[500px] md:h-[1000px] w-full sticky top-50 md:top-0 mx-auto mt-40 flex justify-center items-center z-10">
     
       <div className="h-full w-80 md:w-[600px] rounded-4xl z-10 relative overflow-hidden">
-       <img src="./images/Olivier.jpg" className="h-full w-full object-cover" alt="" />
+       <LazyLoadImage src="./images/Olivier.jpg" className="h-full w-full object-cover" alt="" />
       </div>
     </div>
 

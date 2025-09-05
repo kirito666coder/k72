@@ -33,8 +33,6 @@ const Contact = () => {
         el.scrollTop = el.scrollTop + scrollHeight
       }
 
-      console.log(el.scrollTop)
-
       if(el.scrollTop > lastScrollY.current){
         setrot('-rotate-6')
       }else{
