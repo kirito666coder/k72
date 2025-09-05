@@ -15,7 +15,7 @@ const HomeBottomText = () => {
   }
 
   return (
-    <div className="w-full flex justify-center gap-5 overflow-hidden mt-10">
+    <div className="w-full flex justify-center gap-5 overflow-hidden ">
       <div onClick={()=>{handleClick({value:'./work'})}} className="hover:text-lime-400 hover:border-lime-400 cursor-pointer transition-all duration-100 flex font-[font2] text-[7.5vw] md:text-[7vw] px-8 md:px-10 border-5 border-white rounded-full uppercase leading-none items-end">
         <span className="relative top-[0.6rem] md:top-[0.4rem] leading-15 md:leading-30">work</span>
       </div>
