@@ -2,7 +2,7 @@
 
 ![K72 Logo](public/images/k72.png)
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Website-blue?style=for-the-badge&logo=vercel)](https://k72-k2rxyju1a-kirito666coders-projects.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Website-blue?style=for-the-badge&logo=vercel)](https://k72-theta.vercel.app/)
 
 A modern clone of the [K72 creative agency website](https://k72.ca/en) built with React, TypeScript, and Vite. Features smooth animations, video backgrounds, and responsive design.
 
@@ -10,7 +10,7 @@ A modern clone of the [K72 creative agency website](https://k72.ca/en) built wit
 
 ## 🚀 Live Demo
 
-**[Visit Website](https://k72-k2rxyju1a-kirito666coders-projects.vercel.app)**
+**[Visit Website](https://k72-theta.vercel.app/)**
 
 ## 🛠️ Tech Stack
 
