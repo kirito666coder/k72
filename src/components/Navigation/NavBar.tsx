@@ -66,10 +66,16 @@ const NavBar = () => {
         </div>
         </div>
         <div className="flex">
-        <div className={` hidden md:flex transition-all duration-300 ${(location === '/work' || location === '/agency') && showExtNav === true ? "h-12":'h-0'} w-40 bg-black`}> <div className={`text-white fixed top-4 text-xl uppercase font-[font2] ml-1 ${(location === '/work' || location === '/agency') && showExtNav === true ? "flex":'hidden'}`}>work</div></div>
-        <div className={` hidden md:flex transition-all duration-300 ${(location === '/work' || location === '/agency') && showExtNav === true ? "h-20":'h-0'} w-40 bg-black`}> <div className={`text-white fixed top-12 text-xl uppercase font-[font2] ml-1 ${(location === '/work' || location === '/agency') && showExtNav === true ? "flex":'hidden'}`}>agency</div></div>
+        <div onClick={()=>handleClick({value:'/work'})} className={`text-white hover:text-black relative group hidden md:flex transition-all duration-300 cursor-pointer ${(location === '/work' || location === '/agency') && showExtNav === true ? "h-12":'h-0'} w-40 bg-black`}> 
+          <div className="group-hover:h-full h-0 w-full absolute top-0 left-0 bg-lime-300 transition-all duration-300"></div>
+          <div className={` fixed top-4 text-xl uppercase font-[font2] ml-1 ${(location === '/work' || location === '/agency') && showExtNav === true ? "flex":'hidden'}`}>work</div>
+          </div>
+        <div onClick={()=>handleClick({value:'/agency'})} className={`text-white hover:text-black relative group hidden md:flex transition-all duration-300 cursor-pointer ${(location === '/work' || location === '/agency') && showExtNav === true ? "h-20":'h-0'} w-40 bg-black`}> 
+          <div className="group-hover:h-full h-0 w-full absolute top-0 left-0 bg-lime-300 transition-all duration-300"></div>
+          <div className={` fixed top-12 text-xl uppercase font-[font2] ml-1 ${(location === '/work' || location === '/agency') && showExtNav === true ? "flex":'hidden'}`}>agency</div>
+          </div>
         <div onClick={()=>setshowfullscrean('open')}
-        className={` transition-all duration-300  bg-black ${(location === '/work' || location === '/agency') && showExtNav === true ? "md:h-27":'md:h-13'} h-13 w-60 relative group cursor-pointer`}>
+        className={` text-white hover:text-black transition-all duration-300  bg-black ${(location === '/work' || location === '/agency') && showExtNav === true ? "md:h-27":'md:h-13'} h-13 w-60 relative group cursor-pointer`}>
             <div className="bg-lime-300 h-0 w-full group-hover:h-full transition-all duration-300">
             </div>
            <div onClick={()=>setshowfullscrean('open')} className=" absolute left-44 top-0 h-full w-18  ">
@@ -77,7 +83,7 @@ const NavBar = () => {
             <div className="bg-gray-400 group-hover:bg-gray-600 min-h-0.5 max-w-15 mt-6"></div>
             <div className="bg-gray-400 group-hover:bg-gray-600 min-h-0.5 max-w-8 ml-7 mt-1"></div>
            </div>
-           <div className={` text-white fixed top-19 text-xl uppercase font-[font2] ml-1 ${(location === '/work' || location === '/agency') && showExtNav === true ? "flex":'hidden'}`}>menu</div>
+           <div className={` fixed top-19 text-xl uppercase font-[font2] ml-1 ${(location === '/work' || location === '/agency') && showExtNav === true ? "md:flex":'md:hidden'} hidden`}>menu</div>
         </div>
           </div>
         {showfullscrean &&

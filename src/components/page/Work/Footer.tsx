@@ -24,7 +24,7 @@ const Footer = () => {
       <span className="hover:text-lime-300 hover:border-lime-300 cursor-pointer text-white uppercase border-4 border-white text-5xl md:text-9xl  px-4 rounded-full leading-8 md:leading-22 md:pt-5 md:px-6 pt-2">be</span>
     </div>
 
-    <h3 onClick={()=>handleClick({value:'/contact'})} className="hover:text-lime-300 hover:border-lime-300 cursor-pointer  uppercase text-white text-9xl px-6 border-white border-4 rounded-full leading-22 pt-4 md:mt-4">Contact</h3>
+    <h3 onClick={()=>handleClick({value:'/contact'})} className="hover:text-lime-300 hover:border-lime-300 cursor-pointer  uppercase text-white md:text-9xl text-5xl px-6 border-white border-4 rounded-full md:leading-22 leading-9 pt-2 md:pt-4 md:mt-4">Contact</h3>
     <div>
     <BackToTop/>
     </div>
