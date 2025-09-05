@@ -1,69 +1,42 @@
-# React + TypeScript + Vite
+# K72 Website Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![K72 Logo](public/images/k72.png)
 
-Currently, two official plugins are available:
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Website-blue?style=for-the-badge&logo=vercel)](https://k72-k2rxyju1a-kirito666coders-projects.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A modern clone of the [K72 creative agency website](https://k72.ca/en) built with React, TypeScript, and Vite. Features smooth animations, video backgrounds, and responsive design.
 
-## Expanding the ESLint configuration
+> **Disclaimer**: This is a personal learning project and a tribute to the beautiful design of [K72](https://k72.ca/en). If the original website owners have any concerns about this clone, please contact me and I'll be happy to remove it immediately. This project is for educational purposes only.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Live Demo
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**[Visit Website](https://k72-k2rxyju1a-kirito666coders-projects.vercel.app)**
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **React** 19.1.1 + **TypeScript**
+- **Vite** for build tooling
+- **Tailwind CSS** for styling
+- **GSAP** for animations
+- **React Router** for navigation
+
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone <https://github.com/kirito666coder/k72.git>
+cd k72
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**K72 Website Clone** - A modern recreation of the [K72 creative agency website](https://k72.ca/en).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+**Original Website**: [k72.ca](https://k72.ca/en) - "The spark for all things creative"
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+*This project is created for educational purposes and as a tribute to the original design. All rights to the original design belong to K72 Creative Agency.*
